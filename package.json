@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "rm-docs": "rm -rf docs",
-    "build": "npm run rm-docs && next build && next export && mv out docs",
+    "build": "npm run rm-docs && next build && next export && mv out docs && touch docs/.nojekyll",
     "start": "next start"
   },
   "dependencies": {
