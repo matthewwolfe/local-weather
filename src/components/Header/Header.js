@@ -2,7 +2,7 @@ import { Box, Typography } from '@material-ui/core';
 
 function Header() {
   return (
-    <Box display="flex" mb={6}>
+    <Box display="flex" mb={6} flexDirection={['column', 'row']}>
       <Box mr={2}>
         <Typography variant="h3" style={{ fontWeight: 200 }}>
           Weather
