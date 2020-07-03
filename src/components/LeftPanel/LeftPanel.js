@@ -4,7 +4,7 @@ import { WeekList } from '../WeekList';
 
 function LeftPanel() {
   return (
-    <Box p={8} width={3 / 5}>
+    <Box p={8} width={[1, 1, 3 / 5]}>
       <Header />
       <WeekList />
     </Box>

@@ -4,16 +4,16 @@ import {
   DAILY_FORECAST_URL,
   HOURLY_FORECAST_URL,
 } from '../../config/constants';
+import { useGetForecast } from '../../hooks';
 import { fetcher } from '../../utils/fetcher';
 
 function WeatherProvider({ children }) {
-  const { data: dailyData, error: dailyError } = useSWR(
+  const { data: dailyData, error: dailyError } = useGetForecast(
     DAILY_FORECAST_URL,
-    fetcher,
   );
-  const { data: hourlyData, error: hourlyError } = useSWR(
+
+  const { data: hourlyData, error: hourlyError } = useGetForecast(
     HOURLY_FORECAST_URL,
-    fetcher,
   );
 
   if (!dailyData || !hourlyData) {

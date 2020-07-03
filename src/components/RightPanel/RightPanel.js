@@ -3,7 +3,13 @@ import { TodayOverview } from '../TodayOverview';
 
 function RightPanel() {
   return (
-    <Box p={8} color="#fff" bgcolor="#0e092b" width={2 / 5} height="100vh">
+    <Box
+      bgcolor="#0e092b"
+      color="#fff"
+      height="100vh"
+      p={8}
+      width={[1, 1, 2 / 5]}
+    >
       <TodayOverview />
     </Box>
   );

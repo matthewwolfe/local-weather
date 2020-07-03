@@ -29,7 +29,7 @@ function TodayOverview({ day, precipChance, temperature, validTimeLocal }) {
         </Box>
       </Box>
 
-      <Box>
+      <Box width={1}>
         <PrecipitationChart
           precipChance={precipChance}
           validTimeLocal={validTimeLocal}
