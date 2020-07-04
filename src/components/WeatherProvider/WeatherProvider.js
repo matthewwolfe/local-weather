@@ -1,4 +1,5 @@
-import useSWR from 'swr';
+import { ErrorFallback } from '../ErrorFallback';
+import { Loader } from '../Loader';
 import { WeatherContext } from '../../contexts';
 import {
   DAILY_FORECAST_URL,
@@ -16,12 +17,12 @@ function WeatherProvider({ children }) {
     HOURLY_FORECAST_URL,
   );
 
-  if (!dailyData || !hourlyData) {
-    return null;
+  if (dailyError || hourlyError) {
+    return <ErrorFallback />;
   }
 
-  if (dailyError || hourlyError) {
-    return <div>Something went wrong :(</div>;
+  if (!dailyData || !hourlyData) {
+    return <Loader />;
   }
 
   return (
