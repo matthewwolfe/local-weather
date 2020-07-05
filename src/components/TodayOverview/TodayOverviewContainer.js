@@ -4,6 +4,8 @@ import { useTodayHourlyData } from '../../hooks';
 function TodayOverviewContainer() {
   const data = useTodayHourlyData();
 
+  console.log(data);
+
   return <TodayOverview {...data} />;
 }
 

@@ -1,8 +1,14 @@
 import { useMemo } from 'react';
 import { Box, Typography } from '@material-ui/core';
-import PrecipitationChart from './PrecipitationChart';
+import ConditionsChart from './ConditionsChart';
 
-function TodayOverview({ day, precipChance, temperature, validTimeLocal }) {
+function TodayOverview({
+  day,
+  precipChance,
+  relativeHumidity,
+  temperature,
+  validTimeLocal,
+}) {
   const currentTemperature = temperature[0];
 
   return (
@@ -29,9 +35,10 @@ function TodayOverview({ day, precipChance, temperature, validTimeLocal }) {
         </Box>
       </Box>
 
-      <Box width={1}>
-        <PrecipitationChart
+      <Box width={1} height="40vh">
+        <ConditionsChart
           precipChance={precipChance}
+          relativeHumidity={relativeHumidity}
           validTimeLocal={validTimeLocal}
         />
       </Box>
