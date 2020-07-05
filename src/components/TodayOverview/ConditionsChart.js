@@ -5,7 +5,7 @@ function ConditionsChart({ precipChance, relativeHumidity, validTimeLocal }) {
   const timeLabels = useMemo(
     () =>
       validTimeLocal.map((date) =>
-        new Date(date).toLocaleTimeString('en-US', {
+        new Date(date).toLocaleString('en-US', {
           hour: 'numeric',
           minute: '2-digit',
         }),
