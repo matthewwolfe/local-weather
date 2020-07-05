@@ -1,7 +1,12 @@
 import { useMemo } from 'react';
 import { Line } from 'react-chartjs-2';
 
-function ConditionsChart({ precipChance, relativeHumidity, validTimeLocal }) {
+function ConditionsChart({
+  cloudCover,
+  precipChance,
+  relativeHumidity,
+  validTimeLocal,
+}) {
   const timeLabels = useMemo(
     () =>
       validTimeLocal.map((date) =>
@@ -19,6 +24,17 @@ function ConditionsChart({ precipChance, relativeHumidity, validTimeLocal }) {
         labels: timeLabels,
 
         datasets: [
+          {
+            borderColor: '#eeeeee',
+            data: cloudCover,
+            fill: false,
+            label: 'Cloud Cover',
+            pointBackgroundColor: '#eeeeee',
+            pointBorderColor: '#eeeeee',
+            pointHoverBackgroundColor: '#eeeeee',
+            pointHoverBorderColor: '#eeeeee',
+            showLine: true,
+          },
           {
             borderColor: '#55bae7',
             data: precipChance,

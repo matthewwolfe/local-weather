@@ -3,11 +3,14 @@ import { Box, Typography } from '@material-ui/core';
 import ConditionsChart from './ConditionsChart';
 
 function TodayOverview({
+  cloudCover,
   day,
   precipChance,
   relativeHumidity,
   temperature,
   validTimeLocal,
+  windSpeed,
+  wxPhraseLong,
 }) {
   const currentTemperature = temperature[0];
 
@@ -32,11 +35,14 @@ function TodayOverview({
 
         <Box textAlign="center">
           <Typography variant="h1">{currentTemperature}&deg;</Typography>
+          <Typography variant="h6">{wxPhraseLong}</Typography>
+          <Typography variant="body2">Wind: {windSpeed}mph</Typography>
         </Box>
       </Box>
 
-      <Box width={1} height="40vh">
+      <Box height="40vh" width={1}>
         <ConditionsChart
+          cloudCover={cloudCover}
           precipChance={precipChance}
           relativeHumidity={relativeHumidity}
           validTimeLocal={validTimeLocal}
