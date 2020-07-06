@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import { ErrorFallback } from '../ErrorFallback';
 import { Loader } from '../Loader';
 import { CoordsContext } from '../../contexts';
-import { sessionStorage } from '../../utils/sessionStorage';
+import { localStorage } from '../../utils/localStorage';
 
 function CoordsProvider({ children }) {
   const [coords, setCoords] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const savedCoords = sessionStorage.getItem('coords');
+    const savedCoords = localStorage.getItem('coords');
 
     if (savedCoords) {
       setCoords(savedCoords);
@@ -19,7 +19,7 @@ function CoordsProvider({ children }) {
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
         setCoords(coords);
-        sessionStorage.setItem('coords', {
+        localStorage.setItem('coords', {
           latitude: coords.latitude,
           longitude: coords.longitude,
         });
