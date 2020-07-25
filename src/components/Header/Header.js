@@ -1,17 +1,39 @@
-import { Box, Typography } from '@material-ui/core';
+import { Box, Button, Typography } from '@material-ui/core';
 
-function Header() {
+function Header({ refreshCoords }) {
   return (
-    <Box display="flex" mb={6} flexDirection={['column', 'row']}>
-      <Box mr={2}>
-        <Typography variant="h3" style={{ fontWeight: 200 }}>
-          Weather
+    <Box
+      display="flex"
+      flexDirection={['column-reverse', 'column-reverse', 'row']}
+      justifyContent="space-between"
+      mb={6}
+    >
+      <Box
+        display="flex"
+        flexDirection={['column', 'row']}
+        textAlign={['center', 'center', 'left']}
+      >
+        <Typography variant="h3">
+          <span style={{ fontWeight: 200 }}>Weather</span>{' '}
+          <span style={{ fontWeight: 600 }}>Forecast</span>
         </Typography>
       </Box>
 
-      <Typography variant="h3" style={{ fontWeight: 600 }}>
-        Forecast
-      </Typography>
+      <Box
+        mb={[4, 4, 0]}
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+      >
+        <Button
+          color="primary"
+          disableElevation
+          onClick={() => refreshCoords()}
+          variant="outlined"
+        >
+          Refresh Location
+        </Button>
+      </Box>
     </Box>
   );
 }

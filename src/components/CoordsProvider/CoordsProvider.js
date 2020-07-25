@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ErrorFallback } from '../ErrorFallback';
 import { Loader } from '../Loader';
 import { CoordsContext } from '../../contexts';
+import { getCoords } from '../../utils/getCoords';
 import { localStorage } from '../../utils/localStorage';
 
 function CoordsProvider({ children }) {
@@ -16,18 +17,7 @@ function CoordsProvider({ children }) {
       return;
     }
 
-    navigator.geolocation.getCurrentPosition(
-      ({ coords }) => {
-        setCoords(coords);
-        localStorage.setItem('coords', {
-          latitude: coords.latitude,
-          longitude: coords.longitude,
-        });
-      },
-      (geoError) => {
-        setError(geoError);
-      },
-    );
+    refreshCoords(setCoords, setError);
   }, []);
 
   if (error) {
@@ -39,10 +29,28 @@ function CoordsProvider({ children }) {
   }
 
   return (
-    <CoordsContext.Provider value={{ coords, error }}>
+    <CoordsContext.Provider
+      value={{
+        coords,
+        error,
+        refreshCoords: () => refreshCoords(setCoords, setError),
+      }}
+    >
       {children}
     </CoordsContext.Provider>
   );
+}
+
+async function refreshCoords(setCoords, setError) {
+  setCoords(null);
+  setError(null);
+
+  try {
+    const coords = await getCoords();
+    setCoords(coords);
+  } catch (error) {
+    setError(error);
+  }
 }
 
 export default CoordsProvider;
