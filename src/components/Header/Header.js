@@ -8,27 +8,30 @@ function Header({ address, refreshCoords }) {
       justifyContent="space-between"
       mb={6}
     >
-      {console.log(address)}
       <Box
         display="flex"
         flexDirection={['column', 'row']}
         textAlign={['center', 'center', 'left']}
       >
-        <Typography variant="h3">
-          <span style={{ fontWeight: 200 }}>Weather</span>{' '}
-          <span style={{ fontWeight: 600 }}>Forecast</span>
-        </Typography>
+        <Box display="flex" flexDirection="column">
+          <Typography variant="h3">
+            <span style={{ fontWeight: 200 }}>Weather</span>{' '}
+            <span style={{ fontWeight: 600 }}>Forecast</span>
+          </Typography>
+
+          {address && (
+            <Typography variant="h6">
+              {address.city}, {address.state}
+            </Typography>
+          )}
+        </Box>
       </Box>
 
-      <Box
-        mb={[4, 4, 0]}
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-      >
+      <Box mb={[4, 4, 0]}>
         <Button
           color="primary"
           disableElevation
+          fullWidth
           onClick={() => refreshCoords()}
           variant="outlined"
         >

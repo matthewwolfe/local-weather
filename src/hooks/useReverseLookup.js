@@ -9,7 +9,6 @@ function useReverseLookup() {
   const { coords } = useCurrentCoords();
   const { data, error } = useSWR(generateUrl(coords), fetcher, {
     onError() {
-      console.log('error');
       localStorage.removeItem('address');
     },
     onSuccess({ address }) {
