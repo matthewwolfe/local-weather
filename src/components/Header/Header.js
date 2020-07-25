@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from '@material-ui/core';
 
-function Header({ refreshCoords }) {
+function Header({ address, refreshCoords }) {
   return (
     <Box
       display="flex"
@@ -8,6 +8,7 @@ function Header({ refreshCoords }) {
       justifyContent="space-between"
       mb={6}
     >
+      {console.log(address)}
       <Box
         display="flex"
         flexDirection={['column', 'row']}

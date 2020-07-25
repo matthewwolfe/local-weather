@@ -1,11 +1,14 @@
 import React from 'react';
 import Header from './Header';
-import { useCurrentCoords } from '../../hooks';
+import { useCurrentCoords, useReverseLookup } from '../../hooks';
 
 function HeaderContainer() {
   const { refreshCoords } = useCurrentCoords();
+  const { data = {}, error } = useReverseLookup();
 
-  return <Header refreshCoords={refreshCoords} />;
+  const { address = {} } = data;
+
+  return <Header address={address} refreshCoords={refreshCoords} />;
 }
 
 export default HeaderContainer;

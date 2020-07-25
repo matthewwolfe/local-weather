@@ -14,7 +14,7 @@ async function getCoords() {
       (error) => {
         reject(error);
       },
-      { timeout: 5000 },
+      { enableHighAccuracy: true, maximumAge: 0, timeout: 5000 },
     );
   });
 }
