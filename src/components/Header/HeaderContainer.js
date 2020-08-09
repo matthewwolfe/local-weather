@@ -6,7 +6,7 @@ function HeaderContainer() {
   const { refreshCoords } = useCurrentCoords();
   const { data = {}, error } = useReverseLookup();
 
-  const { address = {} } = data;
+  const { address } = data;
 
   return <Header address={address} refreshCoords={refreshCoords} />;
 }
