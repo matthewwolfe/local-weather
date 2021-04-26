@@ -21523,7 +21523,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/CssBaseline */ "./node_modules/@material-ui/core/esm/CssBaseline/index.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _src_themes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../src/themes */ "./src/themes/index.js");
+/* harmony import */ var _src_themes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../src/themes */ "./src/themes/index.ts");
 
 
 
@@ -21662,16 +21662,16 @@ $RefreshReg$(_c, "MyApp");
 
 /***/ }),
 
-/***/ "./src/themes/index.js":
+/***/ "./src/themes/index.ts":
 /*!*****************************!*\
-  !*** ./src/themes/index.js ***!
+  !*** ./src/themes/index.ts ***!
   \*****************************/
 /*! exports provided: light */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _light__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./light */ "./src/themes/light.js");
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _light__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./light */ "./src/themes/light.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "light", function() { return _light__WEBPACK_IMPORTED_MODULE_0__["light"]; });
 
 
@@ -21735,9 +21735,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/themes/light.js":
+/***/ "./src/themes/light.ts":
 /*!*****************************!*\
-  !*** ./src/themes/light.js ***!
+  !*** ./src/themes/light.ts ***!
   \*****************************/
 /*! exports provided: light */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
