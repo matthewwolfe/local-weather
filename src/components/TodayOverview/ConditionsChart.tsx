@@ -28,11 +28,12 @@ function ConditionsChart({
 
   return (
     <Line
+      type="line"
       data={{
         labels: timeLabels,
-
         datasets: [
           {
+            backgroundColor: '#eeeeee',
             borderColor: '#eeeeee',
             data: cloudCover,
             fill: false,
@@ -44,6 +45,7 @@ function ConditionsChart({
             showLine: true,
           },
           {
+            backgroundColor: '#55bae7',
             borderColor: '#55bae7',
             data: precipChance,
             fill: false,
@@ -55,6 +57,7 @@ function ConditionsChart({
             showLine: true,
           },
           {
+            backgroundColor: '#556be7',
             borderColor: '#556be7',
             data: relativeHumidity,
             fill: false,
