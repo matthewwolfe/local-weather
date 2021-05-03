@@ -1,7 +1,7 @@
 import { Box } from '@material-ui/core';
 import packageJson from '../package.json';
 
-function Version() {
+function Version(): JSX.Element {
   return <Box p={2}>Version: {packageJson.version}</Box>;
 }
 

@@ -3,8 +3,8 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import { light } from '../src/themes';
 
-export default class MyDocument extends Document {
-  render() {
+class MyDocument extends Document {
+  render(): JSX.Element {
     return (
       <Html lang="en">
         <Head>
@@ -36,9 +36,8 @@ MyDocument.getInitialProps = async (ctx) => {
 
   return {
     ...initialProps,
-    styles: [
-      ...React.Children.toArray(initialProps.styles),
-      sheets.getStyleElement(),
-    ],
+    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
   };
 };
+
+export default MyDocument;

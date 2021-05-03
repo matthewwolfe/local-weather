@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Head from 'next/head';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { light } from '../src/themes';
 
-export default function MyApp(props) {
+interface Props {
+  Component: FC;
+  pageProps: Record<string, unknown>;
+}
+
+function App(props: Props): JSX.Element {
   const { Component, pageProps } = props;
 
   React.useEffect(() => {
@@ -19,10 +24,7 @@ export default function MyApp(props) {
     <React.Fragment>
       <Head>
         <title>Local Weather</title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={light}>
         <CssBaseline />
@@ -31,3 +33,5 @@ export default function MyApp(props) {
     </React.Fragment>
   );
 }
+
+export default App;
