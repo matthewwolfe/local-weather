@@ -73,15 +73,13 @@ function ConditionsChart({
       options={{
         maintainAspectRatio: false,
         scales: {
-          yAxes: [
-            {
-              ticks: {
-                stepSize: 10,
-                suggestedMin: 0,
-                suggestedMax: 100,
-              },
+          y: {
+            suggestedMin: 0,
+            suggestedMax: 100,
+            ticks: {
+              stepSize: 10,
             },
-          ],
+          },
         },
       }}
     />

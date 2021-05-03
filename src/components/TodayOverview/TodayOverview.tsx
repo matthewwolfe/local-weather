@@ -1,14 +1,15 @@
-import { Box, Typography } from '@material-ui/core';
-import ConditionsChart from './ConditionsChart';
+import { Box, Tab, Tabs, Typography } from '@material-ui/core';
+import { ConditionsChart } from 'components/ConditionsChart';
+import { TemperatureChart } from 'components/TemperatureChart';
 
-import { HourlyData } from 'types/weather';
-
-interface Props extends HourlyData {}
+import { Props, SelectedTab } from './todayOverview.types';
 
 function TodayOverview({
   cloudCover,
   precipChance,
   relativeHumidity,
+  selectedTab,
+  setSelectedTab,
   temperature,
   validTimeLocal,
   windSpeed,
@@ -37,13 +38,31 @@ function TodayOverview({
         </Box>
       </Box>
 
+      <Box display="flex" justifyContent="center" width={1}>
+        <Tabs
+          value={selectedTab}
+          onChange={(e, newSelectedTab: SelectedTab) => {
+            setSelectedTab(newSelectedTab);
+          }}
+        >
+          <Tab label="Conditions" value="conditions" />
+          <Tab label="Temperature" value="temperature" />
+        </Tabs>
+      </Box>
+
       <Box height="40vh" width={1}>
-        <ConditionsChart
-          cloudCover={cloudCover}
-          precipChance={precipChance}
-          relativeHumidity={relativeHumidity}
-          validTimeLocal={validTimeLocal}
-        />
+        {selectedTab === SelectedTab.Conditions && (
+          <ConditionsChart
+            cloudCover={cloudCover}
+            precipChance={precipChance}
+            relativeHumidity={relativeHumidity}
+            validTimeLocal={validTimeLocal}
+          />
+        )}
+
+        {selectedTab === SelectedTab.Temperature && (
+          <TemperatureChart temperature={temperature} validTimeLocal={validTimeLocal} />
+        )}
       </Box>
     </Box>
   );
