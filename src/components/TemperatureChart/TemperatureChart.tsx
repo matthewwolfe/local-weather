@@ -19,7 +19,6 @@ function TemperatureChart({ temperature, validTimeLocal }: Props): JSX.Element {
 
   return (
     <Line
-      type="line"
       data={{
         labels: timeLabels,
         datasets: [
