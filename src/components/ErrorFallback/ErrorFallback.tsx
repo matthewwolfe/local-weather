@@ -1,4 +1,5 @@
-import { Box, Typography } from '@material-ui/core';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 function ErrorFallback(): JSX.Element {
   return (

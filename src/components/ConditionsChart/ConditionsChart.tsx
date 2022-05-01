@@ -28,7 +28,6 @@ function ConditionsChart({
 
   return (
     <Line
-      type="line"
       data={{
         labels: timeLabels,
         datasets: [

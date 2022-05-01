@@ -1,4 +1,7 @@
-import { Box, Tab, Tabs, Typography } from '@material-ui/core';
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import Typography from '@mui/material/Typography';
 import { ConditionsChart } from 'components/ConditionsChart';
 import { TemperatureChart } from 'components/TemperatureChart';
 
@@ -40,10 +43,10 @@ function TodayOverview({
 
       <Box display="flex" justifyContent="center" width={1}>
         <Tabs
-          value={selectedTab}
           onChange={(e, newSelectedTab: SelectedTab) => {
             setSelectedTab(newSelectedTab);
           }}
+          value={selectedTab}
         >
           <Tab label="Conditions" value="conditions" />
           <Tab label="Temperature" value="temperature" />

@@ -1,4 +1,5 @@
-import { Box, CircularProgress } from '@material-ui/core';
+import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
 
 function Loader(): JSX.Element {
   return (

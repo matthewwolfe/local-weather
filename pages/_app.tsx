@@ -1,7 +1,9 @@
+import 'chart.js/auto';
+
 import React, { FC } from 'react';
 import Head from 'next/head';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
 import { light } from '../src/themes';
 
 interface Props {

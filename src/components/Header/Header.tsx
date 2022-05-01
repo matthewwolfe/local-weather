@@ -1,4 +1,6 @@
-import { Box, Button, Typography } from '@material-ui/core';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 import { Address } from 'types/geolocation';
 

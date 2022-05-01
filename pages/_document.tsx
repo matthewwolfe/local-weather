@@ -1,14 +1,18 @@
 import React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheets } from '@material-ui/core/styles';
-import { light } from 'themes';
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
+import createEmotionServer from '@emotion/server/create-instance';
+import createCache from '@emotion/cache';
 
-class MyDocument extends Document {
-  render(): JSX.Element {
+function createEmotionCache() {
+  return createCache({ key: 'css', prepend: true });
+}
+
+class Document extends NextDocument {
+  render() {
     return (
       <Html lang="en">
         <Head>
-          <meta name="theme-color" content={light.palette.primary.main} />
+          <link rel="shortcut icon" href="/static/favicon.ico" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700&display=swap"
@@ -23,21 +27,35 @@ class MyDocument extends Document {
   }
 }
 
-MyDocument.getInitialProps = async (ctx) => {
-  const sheets = new ServerStyleSheets();
+Document.getInitialProps = async (ctx) => {
   const originalRenderPage = ctx.renderPage;
+
+  const cache = createEmotionCache();
+  const { extractCriticalToChunks } = createEmotionServer(cache);
 
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App) => (props) => sheets.collect(<App {...props} />),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      enhanceApp: (App: any) =>
+        function EnhanceApp(props) {
+          return <App emotionCache={cache} {...props} />;
+        },
     });
 
-  const initialProps = await Document.getInitialProps(ctx);
+  const initialProps = await NextDocument.getInitialProps(ctx);
+  const emotionStyles = extractCriticalToChunks(initialProps.html);
+  const emotionStyleTags = emotionStyles.styles.map((style) => (
+    <style
+      data-emotion={`${style.key} ${style.ids.join(' ')}`}
+      key={style.key}
+      dangerouslySetInnerHTML={{ __html: style.css }}
+    />
+  ));
 
   return {
     ...initialProps,
-    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
+    emotionStyleTags,
   };
 };
 
-export default MyDocument;
+export default Document;

@@ -57,7 +57,9 @@ async function refreshCoords(
     const coords = await getCoords();
     setCoords(coords);
   } catch (error) {
-    setError(error);
+    if (error instanceof Error) {
+      setError(error);
+    }
   }
 }
 
