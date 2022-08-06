@@ -10,6 +10,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@bedrock-ui/breakpoints": "^0.2.0",
+    "@bedrock-ui/core": "^0.4.2",
     "@emotion/react": "^11.10.0",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.0",

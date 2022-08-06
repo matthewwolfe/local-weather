@@ -1,6 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@bedrock-ui/breakpoints': ^0.2.0
+  '@bedrock-ui/core': ^0.4.2
   '@emotion/react': ^11.10.0
   '@emotion/server': ^11.10.0
   '@emotion/styled': ^11.10.0
@@ -27,6 +29,8 @@ specifiers:
   typescript: ^4.7.4
 
 dependencies:
+  '@bedrock-ui/breakpoints': 0.2.0_react@18.2.0
+  '@bedrock-ui/core': 0.4.2_react@18.2.0
   '@emotion/react': 11.10.0_d9efaa4a57b9ddc48121b447e3437c81
   '@emotion/server': 11.10.0
   '@emotion/styled': 11.10.0_749270edd816c6def6aa28737e362a2a
@@ -117,6 +121,23 @@ packages:
       '@babel/helper-string-parser': 7.18.10
       '@babel/helper-validator-identifier': 7.18.6
       to-fast-properties: 2.0.0
+    dev: false
+
+  /@bedrock-ui/breakpoints/0.2.0_react@18.2.0:
+    resolution: {integrity: sha512-/wBAK6DIOUm385bHzob77OOuz4AUuRFd/z7zE9lpEAThhLIUPZyYZPixubz0JT07OG32gydcAsB6/AG4t7Ga+g==}
+    peerDependencies:
+      react: ^17 || ^18
+    dependencies:
+      react: 18.2.0
+    dev: false
+
+  /@bedrock-ui/core/0.4.2_react@18.2.0:
+    resolution: {integrity: sha512-B8RoND4igqmFbCXAX/g6ytF7sSs78EomLi9qpK6KFZE5KVIhrMxvTwkrydm/jKdrZ+2JO50aTgCygN3L/fhk7g==}
+    peerDependencies:
+      react: ^17 || ^18
+    dependencies:
+      clsx: 1.2.1
+      react: 18.2.0
     dev: false
 
   /@emotion/babel-plugin/11.10.0:
