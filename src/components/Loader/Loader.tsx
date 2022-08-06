@@ -1,11 +1,10 @@
-import Box from '@mui/material/Box';
-import CircularProgress from '@mui/material/CircularProgress';
+import { Flex, Heading } from '@bedrock-ui/core';
 
 function Loader(): JSX.Element {
   return (
-    <Box p={10} textAlign="center" width={1}>
-      <CircularProgress />
-    </Box>
+    <Flex justifyContent="center" p={10} style={{ width: '100%' }}>
+      <Heading level={4}>Loading...</Heading>
+    </Flex>
   );
 }
 

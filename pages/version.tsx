@@ -1,4 +1,4 @@
-import Box from '@mui/material/Box';
+import { Box } from '@bedrock-ui/core';
 import packageJson from '../package.json';
 
 function Version(): JSX.Element {

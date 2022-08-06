@@ -1,17 +1,20 @@
-import Box from '@mui/material/Box';
+import { useBreakpoints } from '@bedrock-ui/breakpoints';
+import { Flex } from '@bedrock-ui/core';
 import { CoordsProvider } from 'components/CoordsProvider';
 import { LeftPanel } from 'components/LeftPanel';
 import { RightPanel } from 'components/RightPanel';
 import { WeatherProvider } from 'components/WeatherProvider';
 
 function App(): JSX.Element {
+  const matches = useBreakpoints();
+
   return (
     <CoordsProvider>
       <WeatherProvider>
-        <Box display="flex" flexDirection={['column-reverse', 'column-reverse', 'row']}>
+        <Flex flexDirection={matches.desktop ? 'column-reverse' : undefined}>
           <LeftPanel />
           <RightPanel />
-        </Box>
+        </Flex>
       </WeatherProvider>
     </CoordsProvider>
   );
