@@ -9,18 +9,18 @@ interface Props {
 }
 
 function Day({ day, narrative, temperatureMax, temperatureMin }: Props): JSX.Element {
-  const matches = useBreakpoints();
+  const { sx } = useBreakpoints();
 
   return (
     <Grid style={{ paddingTop: 24 }}>
-      <Grid.Col span={matches.desktop ? 8 : 12}>
+      <Grid.Col span={sx({ mobile: 12, tablet: 12, desktop: 8 })}>
         <Flex flexDirection="column">
           <Text>{day}</Text>
           <Text>{narrative}</Text>
         </Flex>
       </Grid.Col>
 
-      <Grid.Col span={matches.desktop ? 4 : 12}>
+      <Grid.Col span={sx({ mobile: 12, tablet: 12, desktop: 4 })}>
         <Grid>
           <Grid.Col span={6}>
             <Flex justifyContent="center">

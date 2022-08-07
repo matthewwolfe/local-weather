@@ -9,7 +9,7 @@ interface Props {
 }
 
 function Header({ address, refreshCoords }: Props): JSX.Element {
-  const matches = useBreakpoints();
+  const { sx } = useBreakpoints();
 
   return (
     <Flex justifyContent="space-between" mb={6}>
@@ -26,7 +26,7 @@ function Header({ address, refreshCoords }: Props): JSX.Element {
         )}
       </Flex>
 
-      <Flex mb={matches.desktop ? 0 : 4}>
+      <Flex mb={sx({ mobile: 0, tablet: 0, desktop: 4 })}>
         <Button color="primary" onClick={() => refreshCoords()} variant="outlined">
           Refresh Location
         </Button>
