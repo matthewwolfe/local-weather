@@ -1,6 +1,5 @@
 import { ReactNode, useState, useEffect } from 'react';
 import { ErrorFallback } from 'components/ErrorFallback';
-import { Loader } from 'components/Loader';
 import { CoordsContext } from 'contexts';
 import { getCoords } from 'utils/getCoords';
 import { localStorage } from 'utils/localStorage';
@@ -31,7 +30,7 @@ function CoordsProvider({ children }: Props): JSX.Element {
   }
 
   if (!coords) {
-    return <Loader />;
+    return null;
   }
 
   return (
