@@ -26,7 +26,7 @@ function TodayOverview({
     >
       <Box mt={10}>
         <Box mb={5} style={{ textAlign: 'center' }}>
-          <Heading level={4} style={{ color: '#FFFFFF' }}>
+          <Heading color="white" level={4}>
             Today
           </Heading>
 
@@ -40,11 +40,11 @@ function TodayOverview({
         </Box>
 
         <Box style={{ textAlign: 'center' }}>
-          <Heading level={1} style={{ color: '#FFFFFF' }}>
+          <Heading color="white" level={1}>
             {currentTemperature}&deg;
           </Heading>
 
-          <Heading level={6} style={{ color: '#FFFFFF' }}>
+          <Heading color="white" level={6}>
             {wxPhraseLong}
           </Heading>
 

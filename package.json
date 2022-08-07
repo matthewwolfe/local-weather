@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@bedrock-ui/breakpoints": "^0.2.0",
-    "@bedrock-ui/core": "^0.4.4",
+    "@bedrock-ui/core": "^0.4.5",
     "chart.js": "^3.9.1",
     "next": "^12.2.4",
     "react": "^18.2.0",
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.6.4",
-    "@types/react": "^18.0.15",
+    "@types/react": "^18.0.16",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
     "eslint": "^8.21.0",
