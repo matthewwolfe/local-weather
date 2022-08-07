@@ -1,7 +1,4 @@
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
-import Typography from '@mui/material/Typography';
+import { Box, Flex, Heading, Tabs, Text } from '@bedrock-ui/core';
 import { ConditionsChart } from 'components/ConditionsChart';
 import { TemperatureChart } from 'components/TemperatureChart';
 
@@ -21,39 +18,59 @@ function TodayOverview({
   const currentTemperature = temperature[0];
 
   return (
-    <Box display="flex" flexDirection="column" justifyContent="space-between" height="100%">
+    <Flex
+      flexDirection="column"
+      justifyContent="space-between"
+      p={8}
+      style={{ height: 'calc(100% - 64px)' }}
+    >
       <Box mt={10}>
-        <Box textAlign="center" mb={5}>
-          <Typography variant="h4">Today</Typography>
-          <Typography variant="subtitle1">
+        <Box mb={5} style={{ textAlign: 'center' }}>
+          <Heading level={4} style={{ color: '#FFFFFF' }}>
+            Today
+          </Heading>
+
+          <Text color="white">
             {new Date().toLocaleString('en-US', {
               weekday: 'long',
               month: 'long',
               day: 'numeric',
             })}
-          </Typography>
+          </Text>
         </Box>
 
-        <Box textAlign="center">
-          <Typography variant="h1">{currentTemperature}&deg;</Typography>
-          <Typography variant="h6">{wxPhraseLong}</Typography>
-          <Typography variant="body2">Wind: {windSpeed}mph</Typography>
+        <Box style={{ textAlign: 'center' }}>
+          <Heading level={1} style={{ color: '#FFFFFF' }}>
+            {currentTemperature}&deg;
+          </Heading>
+
+          <Heading level={6} style={{ color: '#FFFFFF' }}>
+            {wxPhraseLong}
+          </Heading>
+
+          <Text color="white">Wind: {windSpeed}mph</Text>
         </Box>
       </Box>
 
-      <Box display="flex" justifyContent="center" width={1}>
-        <Tabs
-          onChange={(e, newSelectedTab: SelectedTab) => {
-            setSelectedTab(newSelectedTab);
-          }}
-          value={selectedTab}
-        >
-          <Tab label="Conditions" value="conditions" />
-          <Tab label="Temperature" value="temperature" />
+      <Flex justifyContent="center" style={{ width: '100%' }}>
+        <Tabs>
+          <Tabs.Tab
+            active={selectedTab === SelectedTab.Conditions}
+            onClick={() => setSelectedTab(SelectedTab.Conditions)}
+          >
+            <Text color="white">Conditions</Text>
+          </Tabs.Tab>
+
+          <Tabs.Tab
+            active={selectedTab === SelectedTab.Temperature}
+            onClick={() => setSelectedTab(SelectedTab.Temperature)}
+          >
+            <Text color="white">Temperature</Text>
+          </Tabs.Tab>
         </Tabs>
-      </Box>
+      </Flex>
 
-      <Box height="40vh" width={1}>
+      <Box style={{ height: '40vh', width: '100%' }}>
         {selectedTab === SelectedTab.Conditions && (
           <ConditionsChart
             cloudCover={cloudCover}
@@ -67,7 +84,7 @@ function TodayOverview({
           <TemperatureChart temperature={temperature} validTimeLocal={validTimeLocal} />
         )}
       </Box>
-    </Box>
+    </Flex>
   );
 }
 

@@ -8,9 +8,7 @@ function RightPanel(): JSX.Element {
   return (
     <Grid.Col span={matches.desktop ? 5 : 12}>
       <Box style={{ backgroundColor: '#0e092b', color: '#fff', height: '100vh' }}>
-        <Box p={8}>
-          <TodayOverview />
-        </Box>
+        <TodayOverview />
       </Box>
     </Grid.Col>
   );
