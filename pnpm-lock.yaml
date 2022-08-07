@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@bedrock-ui/breakpoints': ^0.2.0
-  '@bedrock-ui/core': ^0.4.2
+  '@bedrock-ui/core': ^0.4.3
   '@emotion/react': ^11.10.0
   '@emotion/server': ^11.10.0
   '@emotion/styled': ^11.10.0
@@ -30,7 +30,7 @@ specifiers:
 
 dependencies:
   '@bedrock-ui/breakpoints': 0.2.0_react@18.2.0
-  '@bedrock-ui/core': 0.4.2_react@18.2.0
+  '@bedrock-ui/core': 0.4.3_react@18.2.0
   '@emotion/react': 11.10.0_d9efaa4a57b9ddc48121b447e3437c81
   '@emotion/server': 11.10.0
   '@emotion/styled': 11.10.0_749270edd816c6def6aa28737e362a2a
@@ -131,8 +131,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@bedrock-ui/core/0.4.2_react@18.2.0:
-    resolution: {integrity: sha512-B8RoND4igqmFbCXAX/g6ytF7sSs78EomLi9qpK6KFZE5KVIhrMxvTwkrydm/jKdrZ+2JO50aTgCygN3L/fhk7g==}
+  /@bedrock-ui/core/0.4.3_react@18.2.0:
+    resolution: {integrity: sha512-KHI2rTlLh5ni/Af3iAw3k/67SCSLJzVUIV2Qmdrb+GG7WnoP0XUHF2t081gLBx5QkHKUKMKcXIECPNoftWpoFQ==}
     peerDependencies:
       react: ^17 || ^18
     dependencies:

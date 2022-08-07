@@ -1,5 +1,5 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { useBreakpoints } from '@bedrock-ui/breakpoints';
+import { Flex, Grid, Text } from '@bedrock-ui/core';
 
 interface Props {
   day: string;
@@ -9,23 +9,33 @@ interface Props {
 }
 
 function Day({ day, narrative, temperatureMax, temperatureMin }: Props): JSX.Element {
+  const matches = useBreakpoints();
+
   return (
-    <Box display="flex" pt={6} flexDirection={['column', 'column', 'row']}>
-      <Box width={[1, 1, 2 / 3]}>
-        <Typography variant="body1">{day}</Typography>
-        <Typography variant="body2">{narrative}</Typography>
-      </Box>
+    <Grid style={{ paddingTop: 24 }}>
+      <Grid.Col span={matches.desktop ? 8 : 12}>
+        <Flex flexDirection="column">
+          <Text>{day}</Text>
+          <Text>{narrative}</Text>
+        </Flex>
+      </Grid.Col>
 
-      <Box display={['flex', 'flex', 'box']} mt={[4, 4, 0]} width={[1, 1, 1 / 3]}>
-        <Box width={[1, 1, 1 / 2]} textAlign={['left', 'left', 'center']}>
-          {temperatureMax && <Typography variant="body1">{temperatureMax}&deg;F</Typography>}
-        </Box>
+      <Grid.Col span={matches.desktop ? 4 : 12}>
+        <Grid>
+          <Grid.Col span={6}>
+            <Flex justifyContent="center">
+              {temperatureMax && <Text>{temperatureMax}&deg;F</Text>}
+            </Flex>
+          </Grid.Col>
 
-        <Box width={[1, 1, 1 / 2]} textAlign={['left', 'left', 'center']}>
-          <Typography variant="body1">{temperatureMin}&deg;F</Typography>
-        </Box>
-      </Box>
-    </Box>
+          <Grid.Col span={6}>
+            <Flex justifyContent="flex-end">
+              <Text>{temperatureMin}&deg;F</Text>
+            </Flex>
+          </Grid.Col>
+        </Grid>
+      </Grid.Col>
+    </Grid>
   );
 }
 

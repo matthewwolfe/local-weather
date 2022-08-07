@@ -1,11 +1,18 @@
-import Box from '@mui/material/Box';
+import { useBreakpoints } from '@bedrock-ui/breakpoints';
+import { Box, Grid } from '@bedrock-ui/core';
 import { TodayOverview } from 'components/TodayOverview';
 
 function RightPanel(): JSX.Element {
+  const matches = useBreakpoints();
+
   return (
-    <Box bgcolor="#0e092b" color="#fff" height="100vh" p={8} width={[1, 1, 2 / 5]}>
-      <TodayOverview />
-    </Box>
+    <Grid.Col span={matches.desktop ? 5 : 12}>
+      <Box style={{ backgroundColor: '#0e092b', color: '#fff', height: '100vh' }}>
+        <Box p={8}>
+          <TodayOverview />
+        </Box>
+      </Box>
+    </Grid.Col>
   );
 }
 

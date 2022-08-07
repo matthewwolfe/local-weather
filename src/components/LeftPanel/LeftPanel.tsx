@@ -1,13 +1,18 @@
-import Box from '@mui/material/Box';
+import { useBreakpoints } from '@bedrock-ui/breakpoints';
+import { Flex, Grid } from '@bedrock-ui/core';
 import { Header } from 'components/Header';
 import { WeekList } from 'components/WeekList';
 
 function LeftPanel(): JSX.Element {
+  const matches = useBreakpoints();
+
   return (
-    <Box p={8} width={[1, 1, 3 / 5]}>
-      <Header />
-      <WeekList />
-    </Box>
+    <Grid.Col span={matches.desktop ? 7 : 12}>
+      <Flex flexDirection="column" p={8}>
+        <Header />
+        <WeekList />
+      </Flex>
+    </Grid.Col>
   );
 }
 

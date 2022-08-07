@@ -1,6 +1,5 @@
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { useBreakpoints } from '@bedrock-ui/breakpoints';
+import { Button, Flex, Heading } from '@bedrock-ui/core';
 
 import { Address } from 'types/geolocation';
 
@@ -10,44 +9,29 @@ interface Props {
 }
 
 function Header({ address, refreshCoords }: Props): JSX.Element {
+  const matches = useBreakpoints();
+
   return (
-    <Box
-      display="flex"
-      flexDirection={['column-reverse', 'column-reverse', 'row']}
-      justifyContent="space-between"
-      mb={6}
-    >
-      <Box
-        display="flex"
-        flexDirection={['column', 'row']}
-        textAlign={['center', 'center', 'left']}
-      >
-        <Box display="flex" flexDirection="column">
-          <Typography variant="h3">
-            <span style={{ fontWeight: 200 }}>Weather</span>{' '}
-            <span style={{ fontWeight: 600 }}>Forecast</span>
-          </Typography>
+    <Flex justifyContent="space-between" mb={6}>
+      <Flex flexDirection="column">
+        <Heading level={3}>
+          <span style={{ fontWeight: 200 }}>Weather</span>{' '}
+          <span style={{ fontWeight: 600 }}>Forecast</span>
+        </Heading>
 
-          {address && (
-            <Typography variant="h6">
-              {address.city}, {address.state}
-            </Typography>
-          )}
-        </Box>
-      </Box>
+        {address && (
+          <Heading level={6}>
+            {address.city}, {address.state}
+          </Heading>
+        )}
+      </Flex>
 
-      <Box mb={[4, 4, 0]}>
-        <Button
-          color="primary"
-          disableElevation
-          fullWidth
-          onClick={() => refreshCoords()}
-          variant="outlined"
-        >
+      <Flex mb={matches.desktop ? 0 : 4}>
+        <Button color="primary" onClick={() => refreshCoords()} variant="outlined">
           Refresh Location
         </Button>
-      </Box>
-    </Box>
+      </Flex>
+    </Flex>
   );
 }
 
