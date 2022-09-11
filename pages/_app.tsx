@@ -1,4 +1,4 @@
-import '@bedrock-ui/core/css/bedrock-ui.css';
+import 'assets/sass/bedrock-ui.scss';
 import 'chart.js/auto';
 
 import Head from 'next/head';
