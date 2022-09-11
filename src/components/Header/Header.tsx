@@ -1,4 +1,3 @@
-import { useBreakpoints } from '@bedrock-ui/breakpoints';
 import { Button, Flex, Heading } from '@bedrock-ui/core';
 
 import { Address } from 'types/geolocation';
@@ -9,8 +8,6 @@ interface Props {
 }
 
 function Header({ address, refreshCoords }: Props): JSX.Element {
-  const { sx } = useBreakpoints();
-
   return (
     <Flex justifyContent="space-between" mb={6}>
       <Flex flexDirection="column">
@@ -26,7 +23,7 @@ function Header({ address, refreshCoords }: Props): JSX.Element {
         )}
       </Flex>
 
-      <Flex mb={sx({ mobile: 0, tablet: 0, desktop: 4 })}>
+      <Flex mb={4}>
         <Button color="primary" onClick={() => refreshCoords()} variant="outlined">
           Refresh Location
         </Button>
