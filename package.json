@@ -10,7 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@bedrock-ui/core": "^0.6.7",
+    "@bedrock-ui/core": "^0.6.11",
     "chart.js": "^3.9.1",
     "next": "^12.3.1",
     "react": "^18.2.0",

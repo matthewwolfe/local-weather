@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@bedrock-ui/core': ^0.6.7
+  '@bedrock-ui/core': ^0.6.11
   '@types/node': ^18.8.2
   '@types/react': ^18.0.21
   '@typescript-eslint/eslint-plugin': ^5.39.0
@@ -25,7 +25,7 @@ specifiers:
   typescript: ^4.8.4
 
 dependencies:
-  '@bedrock-ui/core': 0.6.7_react@18.2.0
+  '@bedrock-ui/core': 0.6.11_react@18.2.0
   chart.js: 3.9.1
   next: 12.3.1_2mygebwfgdyopr3fy2qddu2eli
   react: 18.2.0
@@ -52,8 +52,8 @@ devDependencies:
 
 packages:
 
-  /@bedrock-ui/core/0.6.7_react@18.2.0:
-    resolution: {integrity: sha512-/3wNMHI3HYEm2c8oM2+JOsr9OVlwXz02tApHAQaLl/iXbyRhcZme+rUEPDrjue2q9qcdRFVwMcFT4qt6LaYlVg==}
+  /@bedrock-ui/core/0.6.11_react@18.2.0:
+    resolution: {integrity: sha512-w1XTn/esWs1G5yuR/vtYygVjQ3BLNfKXtnIcGNvWtcq5XIAPCbGANgBwJaqDWlVgBZdlGLj5tIM4fpps8a/JTQ==}
     peerDependencies:
       react: ^17 || ^18
     dependencies:
@@ -535,8 +535,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite/1.0.30001415:
-    resolution: {integrity: sha512-ER+PfgCJUe8BqunLGWd/1EY4g8AzQcsDAVzdtMGKVtQEmKAwaFfU6vb7EAVIqTMYsqxBorYZi2+22Iouj/y7GQ==}
+  /caniuse-lite/1.0.30001416:
+    resolution: {integrity: sha512-06wzzdAkCPZO+Qm4e/eNghZBDfVNDsCgw33T27OwBH9unE9S478OYw//Q2L7Npf/zBzs7rjZOszIFQkwQKAEqA==}
     dev: false
 
   /chalk/4.1.2:
@@ -1508,7 +1508,7 @@ packages:
     dependencies:
       '@next/env': 12.3.1
       '@swc/helpers': 0.4.11
-      caniuse-lite: 1.0.30001415
+      caniuse-lite: 1.0.30001416
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
