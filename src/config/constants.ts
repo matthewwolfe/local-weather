@@ -1,4 +1,4 @@
-const API_KEY = 'apiKey=6532d6454b8aa370768e63d6ba5a832e';
+const API_KEY = 'apiKey=e1f10a1e78da46f5b10a1e78da96f525';
 export const LOCATION_IQ_API_KEY = 'pk.729a226af0a881a329ff8687423f5610';
 const WEATHER_API = 'https://api.weather.com/v3/wx/forecast';
 
