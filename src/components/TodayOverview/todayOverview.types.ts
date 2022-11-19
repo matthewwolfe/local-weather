@@ -8,4 +8,6 @@ export enum SelectedTab {
 export interface Props extends HourlyData {
   selectedTab: SelectedTab;
   setSelectedTab: (selectedTab: SelectedTab) => void;
+  sunriseTimeLocal: string;
+  sunsetTimeLocal: string;
 }

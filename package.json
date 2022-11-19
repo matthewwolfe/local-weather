@@ -12,6 +12,7 @@
   "dependencies": {
     "@bedrock-ui/core": "^0.6.22",
     "chart.js": "^4.0.1",
+    "dayjs": "^1.11.6",
     "next": "^13.0.4",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.0.1",

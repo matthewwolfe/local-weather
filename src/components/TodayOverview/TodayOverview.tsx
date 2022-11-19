@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, Tabs, Text } from '@bedrock-ui/core';
+import dayjs from 'dayjs';
 import { ConditionsChart } from 'components/ConditionsChart';
 import { TemperatureChart } from 'components/TemperatureChart';
 
@@ -10,6 +11,8 @@ function TodayOverview({
   relativeHumidity,
   selectedTab,
   setSelectedTab,
+  sunriseTimeLocal,
+  sunsetTimeLocal,
   temperature,
   validTimeLocal,
   windSpeed,
@@ -24,7 +27,7 @@ function TodayOverview({
       p={8}
       style={{ height: 'calc(100% - 64px)' }}
     >
-      <Box mt={10}>
+      <Box mt={8}>
         <Box mb={5} style={{ textAlign: 'center' }}>
           <Heading color="white" level={4}>
             Today
@@ -49,6 +52,13 @@ function TodayOverview({
           </Heading>
 
           <Text color="white">Wind: {windSpeed}mph</Text>
+
+          <Box mt={4}>
+            <Text color="white">
+              Daylight Hours {dayjs(sunriseTimeLocal).format('h:mma')} -{' '}
+              {dayjs(sunsetTimeLocal).format('h:mma')}
+            </Text>
+          </Box>
         </Box>
       </Box>
 
@@ -70,7 +80,7 @@ function TodayOverview({
         </Tabs>
       </Flex>
 
-      <Box style={{ height: '40vh', width: '100%' }}>
+      <Box style={{ height: '50vh', width: '100%' }}>
         {selectedTab === SelectedTab.Conditions && (
           <ConditionsChart
             cloudCover={cloudCover}

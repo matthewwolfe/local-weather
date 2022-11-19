@@ -1,4 +1,4 @@
-interface WeatherApiShared {
+interface WeatherApiHourlyJson {
   cloudCover: Array<number>;
   day: string;
   dayOfWeek: Array<string>;
@@ -8,7 +8,7 @@ interface WeatherApiShared {
   validTimeLocal: Array<string>;
 }
 
-export interface HourlyData extends WeatherApiShared {
+export interface HourlyData extends WeatherApiHourlyJson {
   windSpeed: number;
   wxPhraseLong: string;
 }
@@ -16,11 +16,13 @@ export interface HourlyData extends WeatherApiShared {
 export interface WeatherApiDaily {
   dayOfWeek: Array<string>;
   narrative: Array<string>;
+  sunriseTimeLocal: Array<string>;
+  sunsetTimeLocal: Array<string>;
   temperatureMax: Array<number>;
   temperatureMin: Array<number>;
 }
 
-export interface WeatherApiHourly extends WeatherApiShared {
+export interface WeatherApiHourly extends WeatherApiHourlyJson {
   windSpeed: Array<number>;
   wxPhraseLong: Array<string>;
 }

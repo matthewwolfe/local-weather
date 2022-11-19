@@ -1,14 +1,24 @@
 import { useState } from 'react';
-import { useTodayHourlyData } from 'hooks';
+import { useTodayHourlyData, useWeather } from 'hooks';
 import TodayOverview from './TodayOverview';
 
 import { SelectedTab } from './todayOverview.types';
 
 function TodayOverviewContainer(): JSX.Element {
-  const [selectedTab, setSelectedTab] = useState<SelectedTab>(SelectedTab.Conditions);
   const data = useTodayHourlyData();
+  const { dailyData } = useWeather();
 
-  return <TodayOverview selectedTab={selectedTab} setSelectedTab={setSelectedTab} {...data} />;
+  const [selectedTab, setSelectedTab] = useState<SelectedTab>(SelectedTab.Conditions);
+
+  return (
+    <TodayOverview
+      selectedTab={selectedTab}
+      setSelectedTab={setSelectedTab}
+      {...data}
+      sunriseTimeLocal={dailyData.sunriseTimeLocal[0]}
+      sunsetTimeLocal={dailyData.sunsetTimeLocal[0]}
+    />
+  );
 }
 
 export default TodayOverviewContainer;
